@@ -1,41 +1,32 @@
 {
+  "tabBar": {
+    "custom": false,
+    "color": "#000000",
+    "selectedColor": "#000000",
+    "backgroundColor": "red",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "selectedIconPath": "pages/static/tabBar/index-hover.png",
+      "iconPath": "pages/static/tabBar/index.png",
+      "text": "首页"
+    }, {
+      "pagePath": "pages/service/service",
+      "selectedIconPath": "pages/static/tabBar/fuwu-hover.png",
+      "iconPath": "pages/static/tabBar/fuwu.png",
+      "text": "服务"
+    }]
+  },
+  "usingComponents": {},
   "pages": [
-    "index",
-    "pages/test/test",
-    "pages/index/index"
+    "pages/index/index",
+    "pages/service/service"
   ],
   "window": {
-    "navigationBarTitleText": "Demo",
-		"navigationBarBackgroundColor": "#ff83fa",
-		"navigationBarTextStyle": "white",
-		"backgroundColor": "#sd25fa",
-		"backgroundTextStyle": "dark",
-		"enablePullDownRefresh": "true"
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black"
   },
-  "tabBar": {
-		"color":"#2333ff",
-		"selectedColor":"#ffffff",
-		"borderStyle":"white",
-    "list": [
-      {
-        "pagePath": "pages/index/index",
-        "text": "首页",
-				"iconPath":"",
-				"selectedIconPath":""
-      },
-      {
-        "pagePath": "pages/test/test",
-        "text": "日志",
-				"iconPath": "",
-				"selectedIconPath": ""
-      }
-    ]
-  },
-  "networkTimeout": {
-    "request": 10000,
-    "downloadFile": 10000,
-		"connectSocket":10000,
-		"uploadFile":10000
-  },
-  "debug": true
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
 }

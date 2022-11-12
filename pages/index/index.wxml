@@ -1,2 +1,4 @@
-<!--pages/index/index.wxml-->
-<text>我要开始装逼了！</text>
+<!--index.wxml-->
+<view class="container">
+  Weixin
+</view>
