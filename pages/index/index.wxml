@@ -1,4 +1,2 @@
 <!--index.wxml-->
-<view class="container">
-  Weixin
-</view>
+<web-view src="https://jingjianqian.top"></web-view>

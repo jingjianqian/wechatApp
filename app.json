@@ -1,32 +1,13 @@
 {
-  "tabBar": {
-    "custom": false,
-    "color": "#000000",
-    "selectedColor": "#000000",
-    "backgroundColor": "red",
-    "list": [{
-      "pagePath": "pages/index/index",
-      "selectedIconPath": "pages/static/tabBar/index-hover.png",
-      "iconPath": "pages/static/tabBar/index.png",
-      "text": "首页"
-    }, {
-      "pagePath": "pages/service/service",
-      "selectedIconPath": "pages/static/tabBar/fuwu-hover.png",
-      "iconPath": "pages/static/tabBar/fuwu.png",
-      "text": "服务"
-    }]
-  },
-  "usingComponents": {},
-  "pages": [
-    "pages/index/index",
-    "pages/service/service"
-  ],
-  "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
-    "navigationBarTextStyle": "black"
-  },
-  "style": "v2",
-  "sitemapLocation": "sitemap.json"
+    "pages": [
+        "pages/index/index"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "joker's blog",
+        "navigationBarTextStyle": "black"
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json"
 }
