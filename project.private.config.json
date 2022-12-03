@@ -3,7 +3,9 @@
   "projectname": "blog",
   "setting": {
     "compileHotReLoad": true,
-    "urlCheck": false,
-    "autoAudits": true
-  }
+    "urlCheck": true,
+    "autoAudits": false,
+    "bigPackageSizeSupport": false
+  },
+  "libVersion": "2.27.3"
 }

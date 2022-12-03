@@ -1,11 +1,5 @@
 {
-  "appid": "wx5fd8eebdcce9e914",
   "compileType": "miniprogram",
-  "libVersion": "2.28.0",
-  "packOptions": {
-    "ignore": [],
-    "include": []
-  },
   "setting": {
     "coverView": true,
     "es6": true,
@@ -18,11 +12,19 @@
       "ignore": [],
       "disablePlugins": [],
       "outputPath": ""
-    }
+    },
+    "ignoreUploadUnusedFiles": true,
+    "uglifyFileName": true
   },
   "condition": {},
   "editorSetting": {
     "tabIndent": "insertSpaces",
     "tabSize": 2
-  }
+  },
+  "libVersion": "2.28.0",
+  "packOptions": {
+    "ignore": [],
+    "include": []
+  },
+  "appid": "wx5fd8eebdcce9e914"
 }
