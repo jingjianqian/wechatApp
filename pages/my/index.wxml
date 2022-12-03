@@ -1,0 +1,2 @@
+<!--pages/my/index.wxml-->
+<l-tab-bar list="{{list}}" />
