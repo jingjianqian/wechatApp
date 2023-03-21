@@ -1,8 +1,0 @@
-<!--index.wxml-->
-<view style="text-align: center;">
-  <l-progress percent="100" style="display: none;"></l-progress>
-  <l-textarea indicator="{{true}}" placeholder="把视频的的地址粘贴到这里..."  mut-bind:transitionend="aspectFill"/>
-  <l-button type="default" size="large" style="margin-top: 20px;">解析</l-button>
-  <l-tab-bar list="{{list}}" />
-</view>
-
