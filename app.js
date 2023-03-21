@@ -18,19 +18,19 @@ App({
         {
           "selectedIconPath": "/static/tabbar/index-hover.png",
           "iconPath": "/static/tabbar/index.png",
-          "pagePath": "/pages/page/page",
+          "pagePath": "/pages/index/index",
           "text": "首页"
         },
         {
           "selectedIconPath": "/static/tabbar/fuwu-hover.png",
           "iconPath": "/static/tabbar/fuwu.png",
-          "pagePath": "/pages/service/service",
+          "pagePath": "/pages/spider/spider",
           "text": "爬虫"
         },
         {
           "selectedIconPath": "/static/tabbar/faxian-hover.png",
           "iconPath": "/static/tabbar/faxian.png",
-          "pagePath": "/pages/find/find",
+          "pagePath": "/pages/blog/blog",
           "text": "博客"
         },
         {
@@ -40,5 +40,9 @@ App({
           "text": "我的"
         }
       ]
-    },
+    }
+  }
 })
+function   onLaunch() {
+
+}

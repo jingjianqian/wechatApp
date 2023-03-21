@@ -1,4 +1,8 @@
 <!--index.wxml-->
 <view class="container">
-  Weixin
+    <div>
+    indexPage
+    </div>
+    <tabbar tabbar="{{tabbar}}"></tabbar>
 </view>
+

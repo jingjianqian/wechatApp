@@ -1,2 +1,7 @@
 // index.js
-Page({})
+var app = getApp();
+Page({
+  data:{
+    tabbar:{}
+  }
+})
