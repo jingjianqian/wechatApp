@@ -1,2 +1,4 @@
 <!--pages/spider.wxml-->
-<text>pages/spider.wxml</text>
+<view>
+  爬虫
+</view>

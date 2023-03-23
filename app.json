@@ -12,8 +12,6 @@
     "navigationBarTitleText": "消息中心",
     "navigationBarTextStyle": "black"
   },
-  "style": "v2",
-  "sitemapLocation": "sitemap.json",
   "tabBar": {
     "custom": true,
     "color": "#7A7E83",
@@ -26,9 +24,19 @@
         "text": "首页"
       },
       {
+        "pagePath": "pages/spider/spider",
+        "text": "爬虫"
+      },
+      {
+        "pagePath": "pages/blog/blog",
+        "text": "博客"
+      },
+      {
         "pagePath": "pages/my/my",
         "text": "我的"
       }
     ]
-  }
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
 }

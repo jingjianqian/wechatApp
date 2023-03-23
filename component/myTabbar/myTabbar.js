@@ -8,25 +8,25 @@ Component({
     tabbar: {
       type: Object,
       value: {
-        "backgroundColor": "#ffffff",
-        "color": "#999999",
-        "selectedColor": "#E73735",
+        "backgroundColor": "red",
+        "color": "white",
+        "selectedColor": "green",
         "list": [
           {
-            "selectedIconPath": "static/tabbar/index-hover.png",
-            "iconPath": "static/tabbar/index.png",
+            "selectedIconPath": "../../pages/static/tabbar/index-hover.png",
+            "iconPath": "../../pages/static/tabbar/index.png",
             "pagePath": "/pages/index/index",
-            "text": "首页"
+            "text": "首页1"
           },
           {
             "selectedIconPath": "static/tabbar/fuwu-hover.png",
-            "iconPath": "static/tabbar/fuwu.png",
+            "iconPath": "../../pages/static/tabbar/faxian-hover.pngg",
             "pagePath": "/pages/spider/spider",
             "text": "爬虫"
           },
           {
-            "selectedIconPath": "static/tabbar/faxian-hover.png",
-            "iconPath": "static/tabbar/faxian.png",
+            "selectedIconPath": "../../pages/static/tabbar/faxian-hover.png",
+            "iconPath": "../../pages/static/tabbar/faxian.png",
             "pagePath": "/pages/blog/blog",
             "text": "博客"
           },
