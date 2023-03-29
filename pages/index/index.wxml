@@ -2,6 +2,9 @@
 <view class="container">
     <div>
       <button type="primary" data-tempIds="kxTjjZ8KYD1lgzu3iEDcMtOFzzm4W8gwnVDPS2d9v1k" bindtap="subscribeMessage">消息订阅</button>
+      <view style="margin-top: 20px;">
+      </view>
+      <button type="default" data-tempIds="kxTjjZ8KYD1lgzu3iEDcMtOFzzm4W8gwnVDPS2d9v1k" bindtap="login">获取OPENID</button>
     </div>
 
     <tabbar tabbar="{{tabbar}}"></tabbar>

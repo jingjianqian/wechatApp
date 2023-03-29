@@ -4,15 +4,30 @@ Page({
   data:{
     tabbar:{}
   },
-  pageLifetimes: {
-    show() {
-      if (typeof this.getTabBar === 'function' &&
-        this.getTabBar()) {
-        this.getTabBar().setData({
-          selected: 0
-        })
-      }
-    }
+  login(){
+    wx.login({
+      success: (res) => {
+        if(res.code){
+          wx.request({
+            url: 'http://localhost:8081/wx/Login',
+            header: {
+              'Content-Type': 'application/json',
+              'Accept': '*/*',
+              'Host': 'localhost:8081',
+              'Connection': 'keep-alive'
+            },
+            body: JSON.stringify({
+              code:res.code 
+           }),
+            success(res) {
+              console.log(res.data)
+            }
+          })
+        }else{
+          console.log("登录失败",res.errMsg);
+        }
+      },
+    })
   },
   subscribeMessage(event){//订阅消息
     const tempid  = event.currentTarget.dataset.tempids;
