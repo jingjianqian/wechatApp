@@ -9,16 +9,17 @@ Page({
       success: (res) => {
         if(res.code){
           wx.request({
-            url: 'http://localhost:8081/wx/Login',
+            method:'POST',
+            url: 'http://192.168.1.101:8081/wx/Login',
             header: {
-              'Content-Type': 'application/json',
+              'content-type': 'application/json',
               'Accept': '*/*',
-              'Host': 'localhost:8081',
+              'Host': '192.168.1.101:8081',
               'Connection': 'keep-alive'
             },
-            body: JSON.stringify({
+            data: {
               code:res.code 
-           }),
+            },
             success(res) {
               console.log(res.data)
             }
