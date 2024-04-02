@@ -1,6 +1,4 @@
 <!--index.wxml-->
 <scroll-view class="scrollarea" scroll-y type="list">
-  <view class="container">
-    小程序大全222
-  </view>
+    <custom-nav-bar />
 </scroll-view>

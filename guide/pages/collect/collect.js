@@ -1,8 +1,17 @@
 // pages/collect/collect.js
-Component({
+Page({
     onLaunch: function () {
         wx.hideTabBar();
     },
+    onShow:function() {
+        if (typeof this.getTabBar === 'function' ) {
+          this.getTabBar((tabBar) => {
+            tabBar.setData({
+                tabIndex: 1
+            })
+          })
+        }
+      },
 
     /**
      * 组件的属性列表

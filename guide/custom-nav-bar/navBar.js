@@ -17,7 +17,7 @@ Component({
         paddingLeft: 0, // 导航栏做内边距
     },
     ready:function(){
-        console.log("123333333333333333333333333333333")
+       
         // 状态栏高度
         const {screenWidth,statusBarHeight} = wx.getSystemInfoSync();
         // 胶囊按钮

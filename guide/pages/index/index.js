@@ -1,5 +1,14 @@
 // index.js
 Page({
+    onShow:function() { //
+        if (typeof this.getTabBar === 'function' ) {
+          this.getTabBar((tabBar) => {
+            tabBar.setData({
+                tabIndex: 0
+            })
+          })
+        }
+      },
     onLaunch: function () {
         wx.hideTabBar();
 
@@ -8,6 +17,7 @@ Page({
       
 
     },
+ 
     handleTapItem(item) {
         wx.navigateToMiniProgram({
             appId: 'wxf1b97b2df301a1c8'
