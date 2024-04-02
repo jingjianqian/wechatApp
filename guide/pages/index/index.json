@@ -1,0 +1,21 @@
+{
+    "usingComponents": {
+        "ant-button":"antd-mini/Button/index",
+        "ant-icon": "antd-mini/Icon/index",
+        "ant-container": "antd-mini/Container/index",
+        "tabs": "antd-mini/Tabs/index",
+        "badge": "antd-mini/Badge/index",
+        "ant-grid": "antd-mini/Grid/index",
+        "ant-badge": "antd-mini/Badge/index",
+        "avatar": "antd-mini/Avatar/index",
+        "skeleton": "antd-mini/Skeleton/index",
+        "switch": "antd-mini/Switch/index",
+        "skeleton-avatar": "antd-mini/Skeleton/Avatar/index",
+        "skeleton-title": "antd-mini/Skeleton/Title/index",
+        "skeleton-button": "antd-mini/Skeleton/Button/index",
+        "skeleton-paragraph": "antd-mini/Skeleton/Paragraph/index",
+        "skeleton-input": "antd-mini/Skeleton/Input/index",
+        "container": "antd-mini/Container/index",
+        "custom-nav-bar":"/custom-nav-bar/navBar"
+    }
+}

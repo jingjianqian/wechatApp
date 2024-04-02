@@ -1,0 +1,37 @@
+/**index.wxss**/
+page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color:#f5f5f5;
+}
+.scrollarea {
+  flex: 1;
+  overflow-y: hidden;
+}
+.appCard{
+    border: 1px gray solid;
+    margin: 5px;
+    border-radius: 5%;
+}
+.red {
+    background-color: red;
+}
+.tabs{
+    margin: 0px;
+}
+.webBody{
+    padding:1px;
+}
+
+.custom {
+    margin-bottom: 16px;
+  }
+  .container {
+    display: flex;
+    color: #333333;
+    align-items: flex-start;
+  }
+  .content {
+    padding: 12px 16px 0 16px;
+  }

@@ -1,7 +1,0 @@
-{
-    "desc": "允许被搜索",
-    "rules": [{
-    "action": "allow",
-    "page": "*"
-    }]
-}
