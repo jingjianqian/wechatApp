@@ -22,8 +22,7 @@
                 "iconPath": "asset/images/tabBar/collect.png",
                 "selectedIconPath": "asset/images/tabBar/collect.png",
                 "text": "收藏"
-            }
-            ,
+            },
             {
                 "pagePath": "pages/my/my",
                 "iconPath": "asset/images/tabBar/collect.png",

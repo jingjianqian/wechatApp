@@ -1,2 +1,4 @@
 <!--pages/my/my.wxml-->
-<view>关于我</view>
+<view>
+    <custom-nav-bar />
+</view>

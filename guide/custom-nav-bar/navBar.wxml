@@ -1,4 +1,4 @@
 <!--custom-nav-bar/navBar.wxml-->
-<view style="height:{{navigationHei}}px; margin-top:{{navigationTop}}px; padding-left:{{paddingLeft}}px">
+<view style="height:{{navigationHei}}px; margin-top:{{navigationTop}}px; padding-left:{{paddingLeft}}px line-height={{navigationTop}}px">
     <text>小程序大全</text>
 </view>

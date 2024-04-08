@@ -16,6 +16,8 @@
         "skeleton-paragraph": "antd-mini/Skeleton/Paragraph/index",
         "skeleton-input": "antd-mini/Skeleton/Input/index",
         "container": "antd-mini/Container/index",
-        "custom-nav-bar":"/custom-nav-bar/navBar"
+        "custom-nav-bar":"/custom-nav-bar/navBar",
+        "ant-avatar": "antd-mini/Avatar/index",
+        "ant-list-item": "antd-mini/List/ListItem/index"
     }
 }

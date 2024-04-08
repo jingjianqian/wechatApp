@@ -1,4 +1,4 @@
-<view class="webBody">
+<view class="webBody" id="indexPageId">
     <custom-nav-bar>
     </custom-nav-bar>
 <container>
@@ -8,10 +8,53 @@
     items="{{ items }}"
     defaultCurrent="{{ 0 }}" />
 </container>
-<container title="基础用法">
+<view>
+    <ant-container
+        title=""
+        className="container">
+        <ant-list-item brief="Deserunt dolor ea eaque eos">
+            Novalee Spicer
+            <ant-avatar
+            slot="image"
+            src="{{ images[0] }}" />
+        </ant-list-item>
+    </ant-container>
+    <ant-container
+        title=""
+        className="container">
+        <ant-list-item brief="Deserunt dolor ea eaque eos">
+            Novalee Spicer
+            <ant-avatar
+            slot="image"
+            src="{{ images[0] }}" />
+        </ant-list-item>
+    </ant-container>
+    <ant-container
+        title=""
+        className="container">
+        <ant-list-item brief="Deserunt dolor ea eaque eos">
+            Novalee Spicer
+            <ant-avatar
+            slot="image"
+            src="{{ images[0] }}" />
+        </ant-list-item>
+    </ant-container>
+    <ant-container
+        title=""
+        className="container">
+        <ant-list-item brief="Deserunt dolor ea eaque eos">
+            Novalee Spicer
+            <ant-avatar
+            slot="image"
+            src="{{ images[0] }}" />
+        </ant-list-item>
+    </ant-container>
+</view>
+<!-- <container title="基础用法">
   <skeleton 
     avatar="{{ true }}"
     loading="{{ false }}"
+    title="{{ true }}"
   >
   <view class="container">
       <avatar
@@ -23,53 +66,5 @@
       </view>
     </view>
   </skeleton>
-</container>
-<container title="基础用法">
-  <skeleton 
-    avatar="{{ true }}"
-    loading="{{ false }}"
-  >
-  <view class="container">
-      <avatar
-        src="https://images.unsplash.com/photo-1546967191-fdfb13ed6b1e?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ" />
-      <view class="content">
-        We supply a series of design principles, practical patterns and high
-        quality design resources, to help people create their product prototypes
-        beautifully and efficiently.
-      </view>
-    </view>
-  </skeleton>
-</container>
-<container title="基础用法">
-  <skeleton 
-    avatar="{{ true }}"
-    loading="{{ false }}"
-  >
-  <view class="container">
-      <avatar
-        src="https://images.unsplash.com/photo-1546967191-fdfb13ed6b1e?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ" />
-      <view class="content">
-        We supply a series of design principles, practical patterns and high
-        quality design resources, to help people create their product prototypes
-        beautifully and efficiently.
-      </view>
-    </view>
-  </skeleton>
-</container>
-<container title="基础用法">
-  <skeleton 
-    avatar="{{ true }}"
-    loading="{{ false }}"
-  >
-  <view class="container">
-      <avatar
-        src="https://images.unsplash.com/photo-1546967191-fdfb13ed6b1e?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ" />
-      <view class="content">
-        We supply a series of design principles, practical patterns and high
-        quality design resources, to help people create their product prototypes
-        beautifully and efficiently.
-      </view>
-    </view>
-  </skeleton>
-</container>
+</container> -->
 </view>
