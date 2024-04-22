@@ -5,6 +5,5 @@
         "ant-container": "antd-mini/Container/index",
         "ant-avatar": "antd-mini/Avatar/index",
         "ant-list-item": "antd-mini/List/ListItem/index"
-      
     }
 }

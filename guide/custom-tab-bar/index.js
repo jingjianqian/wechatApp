@@ -19,7 +19,7 @@ Page({
         {
             icon: 'UserSetOutline',
             activeIcon: 'TeamFill',
-            pagePath: "/pages/my/my",
+            pagePath: "/pages/test/test",
             text: '我的',
         }
         
