@@ -10,12 +10,11 @@ Page({
         }
       },
     onLaunch: function () {
-        wx.hideTabBar();
-
+            console.log("hello,world")
     },
     onLoad() {
       
-
+        // wx.hideTabBar();
     },
  
     handleTapItem(item) {

@@ -38,14 +38,6 @@
         "navigationBarBackgroundColor": "#fff",
         "navigationBarTitleText": "小程序大全",
         "navigationBarTextStyle": "black"
-    },
-    "componentFramework": "glass-easel",
-    "lazyCodeLoading": "requiredComponents",
-    "renderer": "skyline",
-    "rendererOptions": {
-        "skyline": {
-          "disableABTest": true,
-          "defaultDisplayBlock": false
-        }
     }
+  
 }

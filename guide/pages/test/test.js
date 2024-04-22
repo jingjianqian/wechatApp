@@ -8,12 +8,17 @@ Page({
      */
     data: {
         list: generateList(20),
+        renderer : 'skyline'
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad(options) {
+        console.log(options)
+        this.setData({
+            renderer: this.renderer,
+        })
 
     },
 
@@ -35,6 +40,7 @@ Page({
               })
             })
           }
+          console.log(this.renderer)
     },
 
     /**

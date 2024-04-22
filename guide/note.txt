@@ -1,0 +1,10 @@
+,
+    "componentFramework": "glass-easel",
+    "lazyCodeLoading": "requiredComponents",
+    "renderer": "skyline",
+    "rendererOptions": {
+        "skyline": {
+          "disableABTest": false,
+          "defaultDisplayBlock": false
+        }
+    }
