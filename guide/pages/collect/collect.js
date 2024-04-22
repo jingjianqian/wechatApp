@@ -1,7 +1,7 @@
 // pages/collect/collect.js
 Page({
     onLaunch: function () {
-        wx.hideTabBar();
+        // wx.hideTabBar();
     },
     onShow:function() {
         if (typeof this.getTabBar === 'function' ) {

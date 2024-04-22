@@ -15,7 +15,8 @@
             "outputPath": ""
         },
         "ignoreUploadUnusedFiles": true,
-        "compileWorklet": true
+        "compileWorklet": false,
+        "condition": false
     },
     "condition": {},
     "editorSetting": {
