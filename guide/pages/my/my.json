@@ -1,6 +1,5 @@
 {
     "usingComponents": {
-        "tabs": "antd-mini/Tabs/index",
-        "custom-nav-bar":"/custom-nav-bar/navBar"
+
     }
 }

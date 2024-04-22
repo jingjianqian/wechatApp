@@ -4,13 +4,7 @@ Page({
         // wx.hideTabBar();
     },
     onShow:function() {
-        if (typeof this.getTabBar === 'function' ) {
-          this.getTabBar((tabBar) => {
-            tabBar.setData({
-                tabIndex: 1
-            })
-          })
-        }
+ 
       },
 
     /**

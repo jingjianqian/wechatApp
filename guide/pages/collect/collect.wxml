@@ -1,4 +1,4 @@
 <!--index.wxml-->
 <scroll-view class="scrollarea" scroll-y type="custom">
-    <custom-nav-bar />
+
 </scroll-view>
