@@ -1,13 +1,34 @@
-<scroll-view scroll-y style="width: 100%; height: 100%;" type="custom">
-  <sticky-section>
-    <sticky-header>
-      <view class="header" style="background-color: red;"></view>
-    </sticky-header>
-    <list-view>
-      <view class="cell" wx:for="{{list}}" wx:key="id" style="background-color: {{item.color}};">
-        list item {{index}}
-      </view>
-    </list-view>
-  </sticky-section>
-
+<!-- 使用自定义nav-bar -->
+<navigation-bar class="nav-bar" title="" back="{{false}}">
+  <view class="nav-left" slot="left">
+    <image class="nav-logo" mode="aspectFill" src="../../asset/images/navBar/icon.png" />
+    <view class="nav-title">
+      <text>小程序精选</text>
+    </view>
+  </view>
+</navigation-bar>
+<!-- scroll实现滚动效果 -->
+<scroll-view
+    class="scroll-area"
+    type="custom"
+    scroll-y
+    show-scrollbar="{{true}}"
+>
+    <view class="fake-nav-bar"></view>
+    <!-- sticky实现吸顶效果 -->
+    <sticky-section>
+        <!-- 搜索框吸顶 -->
+        <sticky-header>
+            <!-- 处理skyline与webview -->
+            <view class="search-container" style="padding-top:20px;">
+                <view class="search">
+                    <view class="search-icon-wrp">
+                        <image class="search-icon" src="/asset/images/search.png"/>
+                    </view>
+                </view>
+                <view class="search-text">这是skyline实现的～</view>
+                <view class="search-btn">搜索</view>
+            </view>
+        </sticky-header>
+    </sticky-section>
 </scroll-view>

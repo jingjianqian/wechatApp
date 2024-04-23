@@ -1,1 +1,39 @@
 /* pages/test/test.wxss */
+/* nav-bar相关 */
+.nav-bar {
+    background-color: #fff;
+    position: absolute;
+  }
+  
+  .nav-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .nav-logo {
+    width: 30px;
+    height: 30px;
+    border-radius: 80%;
+  }
+  
+  .nav-title {
+    margin-left: 2px;
+    font-size: 20px;
+    color: #3f3e3e;
+    /* font-weight: bold; */
+  }
+
+  /**
+   搜索框相关 
+   */
+  .fake-nav-bar {
+    height: 60px;
+    background-color: red; /*temp*/
+  }
+  .search-container {
+    padding: 0 16px 10px 16px;
+    /* margin-top: 44px; */
+    /* background-color: transparent; */
+    background-color: #FFF;
+  }

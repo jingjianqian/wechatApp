@@ -15,19 +15,19 @@
             {
                 "pagePath": "pages/index/index",
                 "iconPath": "asset/images/tabBar/index.png",
-                "selectedIconPath": "asset/images/tabBar/index.png",
+                "selectedIconPath": "asset/images/tabBar/index_cover.png",
                 "text": "精选11"
             },
             {
                 "pagePath": "pages/collect/collect",
                 "iconPath": "asset/images/tabBar/collect.png",
-                "selectedIconPath": "asset/images/tabBar/collect.png",
+                "selectedIconPath": "asset/images/tabBar/collect_cover.png",
                 "text": "收藏"
             },
             {
                 "pagePath": "pages/test/test",
-                "iconPath": "asset/images/tabBar/collect.png",
-                "selectedIconPath": "asset/images/tabBar/collect.png",
+                "iconPath": "asset/images/tabBar/my.png",
+                "selectedIconPath": "asset/images/tabBar/my_cover.png",
                 "text": "我的"
             }
         ]
@@ -39,14 +39,18 @@
         "navigationBarTitleText": "小程序大全",
         "navigationBarTextStyle": "black"
     },
-    "componentFramework": "glass-easel",
-    "lazyCodeLoading": "requiredComponents",
+    "style": "v2",
     "renderer": "skyline",
     "rendererOptions": {
-        "skyline": {
-          "disableABTest": false,
-          "defaultDisplayBlock": false
-        }
-    }
+      "skyline": {
+        "defaultDisplayBlock": true,
+        "disableABTest": true,
+        "sdkVersionBegin": "3.0.0",
+        "sdkVersionEnd": "15.255.255"
+      }
+    },
+    "lazyCodeLoading": "requiredComponents",
+    "componentFramework": "glass-easel",
+    "sitemapLocation": "sitemap.json"
   
 }

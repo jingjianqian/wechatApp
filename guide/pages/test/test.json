@@ -1,9 +1,8 @@
 {
     "usingComponents": {
-        "tabs": "antd-mini/Tabs/index",
-        "custom-nav-bar":"/custom-nav-bar/navBar",
-        "ant-container": "antd-mini/Container/index",
-        "ant-avatar": "antd-mini/Avatar/index",
-        "ant-list-item": "antd-mini/List/ListItem/index"
-    }
-}
+      "navigation-bar": "../../components/navigation-bar"
+    },
+    "disableScroll": true,
+    "navigationStyle": "custom"
+  }
+  

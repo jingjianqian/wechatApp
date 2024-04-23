@@ -1,4 +1,4 @@
 <!--index.wxml-->
 <scroll-view class="scrollarea" scroll-y type="custom">
-
+    <text>收藏</text>
 </scroll-view>

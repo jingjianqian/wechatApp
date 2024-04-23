@@ -1,21 +1,20 @@
 // pages/test/test.js
 // demo-1/index.js
-import { generateList } from 'utils'
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        list: generateList(20),
-        renderer : 'skyline'
+        
+        paddingTop: 44,
+        renderer: 'skyline',
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad(options) {
-        console.log(options)
         this.setData({
             renderer: this.renderer,
         })
@@ -40,7 +39,6 @@ Page({
               })
             })
           }
-          console.log(this.renderer)
     },
 
     /**
