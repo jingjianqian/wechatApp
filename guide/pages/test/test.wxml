@@ -1,7 +1,7 @@
 <!-- 使用自定义nav-bar -->
 <navigation-bar class="nav-bar" title="" back="{{false}}">
   <view class="nav-left" slot="left">
-    <image class="nav-logo" mode="aspectFill" src="../../asset/images/navBar/icon.png" />
+    <image class="nav-logo" mode="aspectFill" src="/asset/images/navBar/icon.png" />
     <view class="nav-title">
       <text>小程序精选</text>
     </view>
@@ -20,7 +20,7 @@
         <!-- 搜索框吸顶 -->
         <sticky-header>
             <!-- 处理skyline与webview -->
-            <view class="search-container" style="padding-top:20px;">
+            <view class="search-container" style="padding-top:44px;">
                 <view class="search">
                     <view class="search-icon-wrp">
                         <image class="search-icon" src="/asset/images/search.png"/>
@@ -30,5 +30,7 @@
                 <view class="search-btn">搜索</view>
             </view>
         </sticky-header>
+    </sticky-section>
+    <sticky-section>
     </sticky-section>
 </scroll-view>

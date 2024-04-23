@@ -1,78 +1,49 @@
 // pages/test/test.js
 // demo-1/index.js
-Page({
+//获取窗口信息
+const systemInfo = wx.getWindowInfo()
+//共享参数
+const { shared, Easing } = wx.worklet  
 
-    /**
-     * 页面的初始数据
-     */
+Component({
+    //数据
     data: {
-        
-        paddingTop: 44,
-        renderer: 'skyline',
-    },
-
-    /**
-     * 生命周期函数--监听页面加载
-     */
-    onLoad(options) {
-        this.setData({
-            renderer: this.renderer,
-        })
-
-    },
-
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady() {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow() {
-        if (typeof this.getTabBar === 'function' ) {
-            this.getTabBar((tabBar) => {
-              tabBar.setData({
-                  tabIndex: 2
-              })
+        paddingTop: 44,      //距离头部距离
+        renderer: 'skyline', //渲染框架
+      },
+    lifetimes:{
+        created:function(){//组件被创建时
+            this.searchBarWidth = shared(100)
+            this.navBarOpactiy = shared(1)
+        },
+        attached:function(){ //组件被引用时
+            const padding = 10 * 2
+            const categoryItemWidth = (systemInfo.windowWidth - padding) / 5
+            this.setData({ categoryItemWidth, paddingTop: systemInfo.statusBarHeight, renderer: this.renderer })
+      
+            this.applyAnimatedStyle('.nav-bar', () => {
+              'worklet'
+              return {
+                opacity: this.navBarOpactiy.value
+              }
             })
-          }
-    },
+      
+            this.applyAnimatedStyle('.search', () => {
+              'worklet'
+              return {
+                width: `${this.searchBarWidth.value}%`,
+              }
+            })
+      
+            this.applyAnimatedStyle('.search-container', () => {
+              'worklet'
+              return {
+                backgroundColor: (this.navBarOpactiy.value > 0 && this.renderer == 'skyline') ? 'transparent' : '#fff'
+              }
+            })
+        },
+        detached:function(){
 
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide() {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload() {
-
-    },
-
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh() {
-
-    },
-
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom() {
-
-    },
-
-    /**
-     * 用户点击右上角分享
-     */
-    onShareAppMessage() {
-
+        }
     }
 })
