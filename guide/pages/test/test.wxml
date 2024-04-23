@@ -13,24 +13,46 @@
     type="custom"
     scroll-y
     show-scrollbar="{{true}}"
+    worklet:onscrollupdate="handleScrollUpdate"
 >
-    <view class="fake-nav-bar"></view>
+    <view class="fake-nav-bar" />
     <!-- sticky实现吸顶效果 -->
-    <sticky-section>
-        <!-- 搜索框吸顶 -->
-        <sticky-header>
-            <!-- 处理skyline与webview -->
-            <view class="search-container" style="padding-top:44px;">
-                <view class="search">
-                    <view class="search-icon-wrp">
-                        <image class="search-icon" src="/asset/images/search.png"/>
-                    </view>
+    <sticky-section push-pinned-header="{{false}}">
+    <sticky-header>
+      <view class="search-container" style="{{renderer == 'skyline' ? 'padding' : 'margin'}}-top: {{paddingTop}}px;">
+        <view class="search">
+          <view class="search-icon-wrp">
+            <image class="search-icon" src="/asset/images/search.png" />
+          </view>
+          <view class="search-text">搜索小程序～</view>
+          <view class="search-btn">搜索</view>
+        </view>
+      </view>
+    </sticky-header>
+    <swiper class="category-wrp">
+      <block wx:for="{{categorySet}}" wx:key="page">
+        <swiper-item>
+          <view class="category-list">
+            <block wx:for="{{item.categorys}}" wx:key="id" wx:for-item="category">
+              <view class="category-item" style="width: {{categoryItemWidth}}px;">
+                <image class="category-icon" src="{{category.icon}}" />
+                <view class="category-name">
+                  <text>{{category.name}}</text>
                 </view>
-                <view class="search-text">这是skyline实现的～</view>
-                <view class="search-btn">搜索</view>
-            </view>
-        </sticky-header>
-    </sticky-section>
-    <sticky-section>
-    </sticky-section>
+              </view>
+            </block>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </sticky-section>
+  <sticky-section>
+    <sticky-header >
+        <view style="height:20px;background-color:green;">
+            <text>第二部分吸顶</text>
+        </view>
+    </sticky-header>
+    <view style="height:1200px;background-color:blue;">
+    </view>
+  </sticky-section>
 </scroll-view>

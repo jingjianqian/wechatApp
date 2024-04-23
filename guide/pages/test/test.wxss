@@ -42,7 +42,7 @@
   
   .search-btn {
     position: absolute;
-    right: 0;
+    right: 0px;
     width: 60px;
     height: 100%;
     border-radius: 20px;
