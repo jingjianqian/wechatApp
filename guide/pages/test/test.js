@@ -68,6 +68,7 @@ Component({
         }
     },
     methods:{
+        //滚动更新
         handleScrollUpdate(evt) {
             'worklet'
             const maxDistance = 60
@@ -77,5 +78,21 @@ Component({
             this.searchBarWidth.value = lerp(100, 70, EasingFn(progress))
             this.navBarOpactiy.value = lerp(1, 0, progress)
           },
+        //获取小程序分类
+        getWeappsClases(){
+
+        },
+        //根据分类查询小程序
+        getWeappLists(){
+
+        },
+        //收藏小程序
+        collectApp(){
+
+        },
+        //根据小程序名称搜索
+        searchAppsByName(){
+
+        }
     }
 })

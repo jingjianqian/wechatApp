@@ -1,15 +1,15 @@
 export function getCategory() {
     let categorys = [
-      '中小商户',
-      '商超零售',
-      '品牌服饰',
-      '餐饮',
-      '医疗',
+      '微博热搜',
+      'BOSS直聘',
+      '腾讯体育+',
+      '全能扫描王+',
+      '广西麻将',
       '酒旅',
       '政务',
       '开发技术',
       '产品能力',
-      '运营规范',
+      '广西麻将',
     ]
     let images = [
       'https://res.wx.qq.com/op_res/mGK9l-4vYzVgHuIz_uFeJgc9If4xjgvN3O4UQclWMiJxMoExkarf71FN-3SSf3Sh-GoatfvTbKcPE-grH-1L9g',
@@ -71,10 +71,10 @@ export function getCategory() {
   
   export function getVIPCategory() {
     let vipCategorys = [
-      '本月最热',
-      '官方经营',
-      '行业实践',
-      '微信服务商'
+      '精品推荐',
+      '官方应用',
+      '有趣游戏',
+      '奇异小程序'
     ]
     vipCategorys = vipCategorys.map((name, id) => ({
       id,
