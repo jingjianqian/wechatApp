@@ -1,11 +1,5 @@
-// pages/collect/collect.js
-Page({
-    onLaunch: function () {
-        // wx.hideTabBar();
-    },
-    onShow:function() {
- 
-      },
+// pages/test/searchResult/searchResult.js
+Component({
 
     /**
      * 组件的属性列表
@@ -20,7 +14,10 @@ Page({
     data: {
 
     },
+    //声明周期
+    lifetimes:{
 
+    },
     /**
      * 组件的方法列表
      */

@@ -1,64 +1,89 @@
-// index.js
-Page({
-    onShow:function() { //
-        if (typeof this.getTabBar === 'function' ) {
-          this.getTabBar((tabBar) => {
-            tabBar.setData({
-                tabIndex: 0
-            })
-          })
+import { getCategory, getGoods, getVIPCategory } from '../../util'
+
+const systemInfo = wx.getSystemInfoSync()
+
+const { shared, Easing } = wx.worklet
+
+const lerp = function (begin, end, t) {
+  'worklet'
+  return begin + (end - begin) * t
+}
+
+const clamp = function (cur, lowerBound, upperBound) {
+  'worklet'
+  if (cur > upperBound) return upperBound
+  if (cur < lowerBound) return lowerBound
+  return cur
+}
+
+Component({
+  data: {
+    goods: getGoods(30),
+    categorySet: [{
+      page: 0,
+      categorys: getCategory()
+    }, {
+      page: 1,
+      categorys: getCategory().reverse()
+    }],
+    paddingTop: 44,
+    renderer: 'skyline',
+    vipCategorys: getVIPCategory(),
+    categoryItemWidth: 0,
+    intoView: '',
+    selected: 0
+  },
+
+  lifetimes: {
+    created() {
+      this.searchBarWidth = shared(100)
+      this.navBarOpactiy = shared(1)
+    },
+    attached() {
+      const padding = 10 * 2
+      const categoryItemWidth = (systemInfo.windowWidth - padding) / 5
+      this.setData({ categoryItemWidth, paddingTop: systemInfo.statusBarHeight, renderer: this.renderer })
+
+      this.applyAnimatedStyle('.nav-bar', () => {
+        'worklet'
+        return {
+          opacity: this.navBarOpactiy.value
         }
-      },
-    onLaunch: function () {
-            console.log("hello,world")
+      })
+
+      this.applyAnimatedStyle('.search', () => {
+        'worklet'
+        return {
+          width: `${this.searchBarWidth.value}%`,
+        }
+      })
+
+      this.applyAnimatedStyle('.search-container', () => {
+        'worklet'
+        return {
+          backgroundColor: (this.navBarOpactiy.value > 0 && this.renderer == 'skyline') ? 'transparent' : '#fff'
+        }
+      })
     },
-    onLoad() {
-      
-        // wx.hideTabBar();
+  },
+
+  methods: {
+    chooseVipCategory(evt) {
+      const id = evt.currentTarget.dataset.id
+      this.setData({
+        intoView: `vip-category-${id}`,
+        selected: parseInt(id, 10)
+      })
     },
- 
-    handleTapItem(item) {
-        wx.navigateToMiniProgram({
-            appId: 'wxf1b97b2df301a1c8'
-          })
+
+    handleScrollUpdate(evt) {
+      'worklet'
+      const maxDistance = 60
+      const scrollTop = clamp(evt.detail.scrollTop, 0, maxDistance)
+      const progress = scrollTop / maxDistance
+      const EasingFn = Easing.cubicBezier(0.4, 0.0, 0.2, 1.0)
+      this.searchBarWidth.value = lerp(100, 70, EasingFn(progress))
+      this.navBarOpactiy.value = lerp(1, 0, progress)
     },
-    data:{
-        sizes: ['x-small', 'small', 'medium', 'large'],
-        images: [
-            '/asset/images/appsIcons/weibo.png',
-            '/asset/images/appsIcons/BOSS.png',
-            '/asset/images/appsIcons/tencentSport.png',
-            '/asset/images/appsIcons/wechatRead.png',
-            '/asset/images/appsIcons/scan.png'
-        ],
-        current:0,
-        items: [
-            {
-                title: '全部',
-                subTitle: '全部小程序',
-                content: '已摘录的所有小程序',
-            },
-            {
-                title: '工具',
-                subTitle: '好用的工具小程序',
-                badge: true,
-                content: '推荐小程序',
-            },
-            {
-                title: '游戏',
-                subTitle: '好玩有趣的游戏小程序',
-                content: '上号啦',
-            },
-            {
-                title: '官方',
-                subTitle: '好玩有趣的游戏小程序',
-                content: '上号啦',
-            },
-            {
-                title: '其他',
-                subTitle: '好玩有趣的游戏小程序',
-                content: '上号啦',
-            }
-        ],
-    }
+  },
 })

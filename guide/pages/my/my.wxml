@@ -1,4 +1,3 @@
-<!--pages/my/my.wxml-->
-<view>
-    <custom-nav-bar />
-</view>
+<scroll-view type="custom">
+    <text>我的</text>
+</scroll-view>
