@@ -1,3 +1,6 @@
+export function getBannerApps(){
+    
+}
 export function getCategory() {
     let categorys = [
       '微博热搜',
