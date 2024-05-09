@@ -34,10 +34,10 @@
         <swiper-item>
           <view class="category-list">
             <block wx:for="{{item.categorys}}" wx:key="id" wx:for-item="category">
-              <view class="category-item" style="width: {{categoryItemWidth}}px;">
-                <image class="category-icon" src="{{category.icon}}" />
+              <view bind:tap="switchToWeapp" id="{{category.weappOpenid}}"   class="category-item" style="width: {{categoryItemWidth}}px;">
+                <image class="category-icon" src="{{category.logoImg}}" />
                 <view class="category-name">
-                  <text>{{category.name}}</text>
+                  <text>{{category.weappName}}</text>
                 </view>
               </view>
             </block>
