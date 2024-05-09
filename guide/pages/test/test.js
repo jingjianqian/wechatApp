@@ -37,6 +37,7 @@ Component({
     lifetimes:{
         created:function(){//组件被创建时
             console.log('test component created')
+            this.getBannerApps(this);
             this.searchBarWidth = shared(100) //
             this.navBarOpactiy = shared(1)
         },
@@ -68,8 +69,44 @@ Component({
             this.searchBarWidth.value = lerp(100, 70, EasingFn(progress))
             this.navBarOpactiy.value = lerp(1, 0, progress)
           },
-        getBannerApps(){
-
+        switchToWeapp(event){
+            wx.navigateToMiniProgram({
+                appId: event.currentTarget.id,
+                extraData: {
+                  foo: 'bar'
+                },
+                envVersion: 'release',
+                success(res) {
+                  console.log(res)
+                }
+              })
+        },
+        getBannerApps(_this){
+            const url = api + "app-api/weapp/apps-list/banner/get";//
+            wx.request({
+                method:'POST',
+                url: url, //仅为示例，并非真实的接口地址
+                data: {
+                },
+                header: {
+                  'content-type': 'application/json', // 默认值
+                  'tenant-id': '1',
+                  'Authorization': 'Bearer test1',
+                  'Accept': '*/*',
+                  'Host': 'localhost:48080',
+                  'Connection': 'keep-alive'
+                },
+                success (res) {
+                
+                  if(res.data){
+                    const bannerApps = [{page:0, categorys:res.data.data}];
+                    console.log(res.data.data)
+                    _this.setData({
+                        categorySet:bannerApps
+                    })
+                  }
+                }
+              })
         },
         //获取小程序分类
         getWeappsClases(){

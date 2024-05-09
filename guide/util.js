@@ -31,6 +31,7 @@ export function getCategory() {
       name,
       icon: images[(id % categorys.length)] //`/images/boy/b${id}.png`
     }))
+    console.log(categorys)
     return categorys
   }
   
