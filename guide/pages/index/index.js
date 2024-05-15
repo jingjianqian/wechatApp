@@ -1,6 +1,6 @@
 // pages/test/test.js
 // demo-1/index.js
-import { getCategory,getVIPCategory} from '../../util'
+import { getCategory, getGoods,getVIPCategory} from '../../util'
 import api from '../../util/config'
 
 //获取窗口信息
@@ -35,7 +35,8 @@ Component({
           }],
           vipCategorys: getVIPCategory(),
           intoView: '',
-          selected: 0
+          selected: 0,
+          goods: getGoods(30),
       },
     lifetimes:{
         created:function(){//组件被创建时
@@ -66,12 +67,15 @@ Component({
         //滚动更新
         handleScrollUpdate(evt) {
             'worklet'
+            console.log('handleScrollUpdate')
             const maxDistance = 60
             const scrollTop = clamp(evt.detail.scrollTop, 0, maxDistance)
+            console.log(scrollTop)
             const progress = scrollTop / maxDistance
             const EasingFn = Easing.cubicBezier(0.4, 0.0, 0.2, 1.0)
             this.searchBarWidth.value = lerp(100, 70, EasingFn(progress))
             this.navBarOpactiy.value = lerp(1, 0, progress)
+           
           },
         chooseVipCategory(evt) {
             const id = evt.currentTarget.dataset.id
@@ -88,7 +92,7 @@ Component({
                 },
                 envVersion: 'release',
                 success(res) {
-                  console.log(res)
+                //   console.log(res)
                 }
               })
         },
@@ -109,7 +113,7 @@ Component({
                 success (res) {
                   if(res.data){
                     const bannerApps = [{page:0, categorys:res.data.data}];
-                    console.log(res.data.data)
+                    // console.log(res.data.data)
                     _this.setData({
                         categorySet:bannerApps
                     })
@@ -134,14 +138,42 @@ Component({
                 },
                 success (res) {
                   if(res.data){
-                    console.log(res.data)
+
+                    const category = res.data.data;
+                    // console.log(category)
+                    _this.setData({
+                        vipCategorys:category
+                    })
                   }
                 }
               })
         },
         //根据分类查询小程序
-        getWeappLists(){
+        getWeappLists(_this){
+            const url = api + "app-api/weapp/apps-class/get";//
+            wx.request({
+                method:'POST',
+                url: url, //仅为示例，并非真实的接口地址
+                data: {
+                },
+                header: {
+                  'content-type': 'application/json', // 默认值
+                  'tenant-id': '1',
+                  'Authorization': 'Bearer test1',
+                  'Accept': '*/*',
+                  'Connection': 'keep-alive'
+                },
+                success (res) {
+                  if(res.data){
 
+                    const category = res.data.data;
+                    // console.log(category)
+                    _this.setData({
+                        vipCategorys:category
+                    })
+                  }
+                }
+              })
         },
         //收藏小程序
         collectApp(){
