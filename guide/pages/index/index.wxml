@@ -60,12 +60,29 @@
       >
         <block wx:for="{{vipCategorys}}" wx:key="id">
           <view class="vip-category-item" id="vip-category-{{index}}">
-            <text class="vip-category-name {{selected === index ? 'selected' : ''}}" data-id="{{index}}" bind:tap="chooseVipCategory">{{item.name}}</text>
+            <text class="vip-category-name {{selected === index ? 'selected' : ''}}" data-id="{{index}}" bind:tap="chooseVipCategory">{{item.className}}</text>
           </view>
         </block>
       </scroll-view>
     </sticky-header>
-    <view style="height:1200px;background-color:blue;">
-    </view>
+    <grid-view
+     padding="{{[6, 6, 6, 6]}}"
+     cross-axis-gap="6"
+     main-axis-gap="6"
+     cross-axis-count="2"
+     type="masonry"
+    >
+      <block wx:for="{{goods}}" wx:key="id">
+        <view class="good">
+          <image mode="widthFix" class="good-icon" fade-in src="{{item.icon}}" />
+          <view class="good-title">
+            <text>{{item.title}}</text>
+          </view>
+          <view class="good-comment">
+            <text>3万+评价</text>
+          </view>
+        </view>
+      </block>
+    </grid-view>
   </sticky-section>
 </scroll-view>
