@@ -1,7 +1,9 @@
 import { Component } from '../_util/simply';
 Component({
-    type: null,
-    image: '',
-    title: '',
-    message: '',
+    props: {
+        type: null,
+        image: '',
+        title: '',
+        message: '',
+    },
 });

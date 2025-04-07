@@ -1,0 +1,6 @@
+/* pages/user/user.wxss  */
+.user-container {
+  height: 100px;
+  color: red;
+  font-size: 48rpx;
+}

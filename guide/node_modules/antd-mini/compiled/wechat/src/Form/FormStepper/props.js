@@ -20,8 +20,8 @@ var __rest = (this && this.__rest) || function (s, e) {
         }
     return t;
 };
-import { FormItemFunctionalProps } from '../FormItem/props';
-import { StepperFunctionalProps } from '../../Stepper/props';
+import { FormItemDefaultProps } from '../FormItem/props';
+import { StepperDefaultProps } from '../../Stepper/props';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-var value = StepperFunctionalProps.value, defaultValue = StepperFunctionalProps.defaultValue, rest = __rest(StepperFunctionalProps, ["value", "defaultValue"]);
-export var FormStepperDefaultProps = __assign(__assign(__assign({}, FormItemFunctionalProps), rest), { stepperClassName: '', stepperStyle: '' });
+var value = StepperDefaultProps.value, defaultValue = StepperDefaultProps.defaultValue, rest = __rest(StepperDefaultProps, ["value", "defaultValue"]);
+export var FormStepperDefaultProps = __assign(__assign(__assign({}, FormItemDefaultProps), rest), { stepperClassName: '', stepperStyle: '' });

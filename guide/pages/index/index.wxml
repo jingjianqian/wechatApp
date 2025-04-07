@@ -1,85 +1,60 @@
-<!-- 总布局 -->
-<sticky-section>
-    <sticky-header>
-        <ant-container>
-            <custom-nav-bar/>
-        </ant-container>
-    </sticky-header>
-<view class="webBody">
-    <ant-container>
-        <tabs 
-            className = "tabs"
-            type="capsule"
-            items="{{ items }}"
-            defaultCurrent="{{ 0 }}" />
+<scroll-view scroll-y style="height: 100vh;">
+  <!-- wxml -->
+  <view class="status-bar" style="height: {{statusBarHeight}}px;"></view>
+  <view class="nav-bar" style="height: {{navBarHeight}}px;">
+  </view>
+  <!-- 置顶小程序模块 -->
+  <view class="banner">
+    <ant-container title="自定义图标大小">
+      <ant-grid items="{{bannerList}}" bindtap="handleTapItem" columns="{{4}}" iconSize="{{50}}"></ant-grid>
     </ant-container>
-    <ant-container>
-        <view class="content">
-            <ant-list-item brief="微博官方热搜小程序，随时查看热搜信息">
-                微博热搜
-                <ant-avatar
-                slot="image"
-                src="{{ images[0] }}" />
-            </ant-list-item>
+  </view>
+  <!-- 列表 -->
+  <view wx:for="{{appList}}" wx:key="id" class="item-container">
+    
+    <!-- 可滑动区域 -->
+    <movable-area class="movable-area">
+      <movable-view 
+        class="movable-view"
+        direction="horizontal"
+        damping="30"
+        out-of-bounds="false"
+        x="{{item.swipeOffset}}" 
+        data-index="{{index}}"
+        bindchange="handleSwipe"
+        bindtouchend="handleSwipeEnd"
+      >
+        <!-- 内容主体 -->
+        <view class="content-wrapper">
+          <image src="{{item.icon}}"  class="app-icon" mode="aspectFit" />
+          <view class="text-container">
+            <view class="title-row">
+              <text class="app-name">{{item.name}}</text> 
+              <image 
+                src="/images/icon/car.svg"  
+                class="verified-icon" 
+                wx:if="{{index === 0}}"
+              />
+            </view>
+            <text class="app-desc">{{item.desc}}</text> 
+          </view>
         </view>
-    </ant-container>
-    <ant-container>
-        <view class="content">
-            <ant-list-item brief="BOSS直聘官方小程序，找工作的主流应用">
-                BOSS直聘
-                <ant-avatar
-                slot="image"
-                src="{{ images[1] }}" />
-            </ant-list-item>
+      </movable-view>
+ 
+      <!-- 右侧操作按钮 -->
+      <view class="action-buttons">
+        <view 
+          class="collect-btn {{item.isCollected  ? 'collected' : ''}}"
+          bindtap="toggleCollect"
+          data-id="{{item.id}}" 
+        >
+          <image 
+            src="{{item.isCollected  ? '/./images/icon/coupons-off.svg'  : '/images/icon/coupons-active.svg'}}"  
+            class="star-icon"
+          />
         </view>
-    </ant-container>
-    <ant-container>
-        <view class="content">
-            <ant-list-item brief="NBA目前官方签约平台，同时包含其他腾讯体育信息，随时查看体育安排信息">
-                腾讯体育+
-                <ant-avatar
-                slot="image"
-                src="{{ images[2] }}" />
-            </ant-list-item>
-        </view>
-    </ant-container>
-    <ant-container>
-        <view class="content">
-            <ant-list-item brief="腾讯出品的电子书平台，目前书籍已经很全，喜欢看书的朋友可以试试">
-                微信读书
-                <ant-avatar
-                slot="image"
-                src="{{ images[3] }}" />
-            </ant-list-item>
-        </view>
-    </ant-container>
-    <ant-container>
-        <view class="content">
-            <ant-list-item brief="移动版的扫描，对付简单的扫描功能绰绰有余">
-                扫描全能王+
-                <ant-avatar
-                slot="image"
-                src="{{ images[4] }}" />
-            </ant-list-item>
-        </view>
-    </ant-container>
-    <ant-container>
-        <view class="content" />
-    </ant-container>
-    <ant-container>
-        <view class="content" />
-    </ant-container>
-    <ant-container>
-        <view class="content" />
-    </ant-container>
-    <ant-container>
-        <view class="content" />
-    </ant-container>
-    <ant-container>
-        <view class="content" />
-    </ant-container>
-    <ant-container>
-        <view class="content" />
-    </ant-container>
-</view>
-</sticky-section>
+      </view>
+    </movable-area>
+ 
+  </view>
+</scroll-view>>

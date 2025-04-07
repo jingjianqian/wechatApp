@@ -1,8 +1,4 @@
 export var FormItemDefaultProps = {
-    position: 'horizontal',
-    requiredMark: 'asterisk',
-};
-export var FormItemFunctionalProps = {
     name: null,
     label: null,
     labelWidth: null,
@@ -15,6 +11,7 @@ export var FormItemFunctionalProps = {
     tooltip: '',
     required: false,
     disabled: false,
+    readonly: false,
     extra: '',
     message: null,
     dependencies: null,

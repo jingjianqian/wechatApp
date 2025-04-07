@@ -1,51 +1,93 @@
 {
-    "pages": [
+  "pages": [
+    "pages/index/index",
+    "pages/category/category",
+    "pages/my/index"
+  ],
+  "requiredPrivateInfos": [
+    "getLocation",
+    "chooseAddress",
+    "chooseLocation"
+  ],
+  "subpackages": [
+    {
+      "root": "packageStreamMedia",
+      "name": "packageStreamMedia",
+      "pages": [
+        "pages/videoCall/videoCall",
+        "pages/live-anchor/index",
+        "pages/live-anchor/list",
+        "pages/live-client/list",
+        "pages/live-client/client"
+      ]
+    },
+    {
+      "root": "packageCps",
+      "name": "packageCps",
+      "pages": [
+        "pages/goods-details/cps-jd",
+        "pages/goods-details/cps-pdd",
+        "pages/goods-details/cps-taobao",
+        "pages/order-list/cps"
+      ]
+    },
+    {
+      "root": "packageFx",
+      "name": "packageFx",
+      "pages": [
         "pages/index/index",
-        "pages/collect/collect",
-        "pages/my/my",
-        "pages/test/test"
-    ],
-    "tabBar": {
-        "custom": true,
-        "color": "#7A7E83",
-        "selectedColor": "#3cc51f",
-        "borderStyle": "black",
-        "backgroundColor": "#ffffff",
-        "list": [
-            {
-                "pagePath": "pages/index/index",
-                "iconPath": "asset/images/tabBar/index.png",
-                "selectedIconPath": "asset/images/tabBar/index.png",
-                "text": "精选"
-            },
-            {
-                "pagePath": "pages/collect/collect",
-                "iconPath": "asset/images/tabBar/collect.png",
-                "selectedIconPath": "asset/images/tabBar/collect.png",
-                "text": "收藏"
-            },
-            {
-                "pagePath": "pages/test/test",
-                "iconPath": "asset/images/tabBar/collect.png",
-                "selectedIconPath": "asset/images/tabBar/collect.png",
-                "text": "我的"
-            }
-        ]
-    },
-    "window": {
-        "navigationStyle": "custom",
-        "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "#fff",
-        "navigationBarTitleText": "小程序大全",
-        "navigationBarTextStyle": "black"
-    },
-    "componentFramework": "glass-easel",
-    "lazyCodeLoading": "requiredComponents",
-    "renderer": "skyline",
-    "rendererOptions": {
-        "skyline": {
-          "disableABTest": true,
-          "defaultDisplayBlock": false
-        }
+        "pages/hehuorenfenxiao/index",
+        "pages/hehuorenfenxiao/fxmember",
+        "pages/apply/index",
+        "pages/apply/form",
+        "pages/myusers/index",
+        "pages/commisionLog/index",
+        "pages/report/team",
+        "pages/report/city",
+        "pages/myusers/myusers-detail"
+      ]
     }
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "black",
+    "onReachBottomDistance": 50
+  },
+  "tabBar": {
+    "color": "#6e6d6b",
+    "selectedColor": "#e64340",
+    "borderStyle": "white",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/nav/home-off.png",
+        "selectedIconPath": "images/nav/home-on.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/category/category",
+        "iconPath": "images/nav/fl-off.png",
+        "selectedIconPath": "images/nav/fl-on.png",
+        "text": "我的收藏"
+      },
+      
+      {
+        "pagePath": "pages/my/index",
+        "iconPath": "images/nav/my-off.png",
+        "selectedIconPath": "images/nav/my-on.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "获取离你最近的门店"
+    }
+  },
+  "usingComponents": {
+  },
+  "sitemapLocation": "sitemap.json"
 }

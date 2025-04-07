@@ -1,4 +1,0 @@
-<!--pages/my/my.wxml-->
-<view>
-    <custom-nav-bar />
-</view>

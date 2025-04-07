@@ -9,6 +9,17 @@ var __assign = (this && this.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
+var __rest = (this && this.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
 function removeNullProps(props) {
     var newProps = {};
     for (var key in props) {
@@ -44,16 +55,76 @@ function mergeDefaultProps(defaultProps) {
     if (defaultProps === void 0) { defaultProps = {}; }
     return __assign({ className: '', style: '' }, defaultProps);
 }
-function ComponentImpl(defaultProps, methods) {
-    Component({
-        properties: buildProperties(mergeDefaultProps(defaultProps)),
-        options: {
+export var ComponentWithSignalStoreImpl = function (_a) {
+    var storeOptions = _a.storeOptions, defaultProps = _a.props, methods = _a.methods, data = _a.data, mixins = _a.mixins, instanceMethods = __rest(_a, ["storeOptions", "props", "methods", "data", "mixins"]);
+    var storeBinder = new StoreBinder(storeOptions);
+    var defaultOnInit = function () {
+        storeBinder.init(this);
+    };
+    var instanceMethodsCopy = __assign({}, instanceMethods);
+    var attachedBackup = instanceMethodsCopy.attached || (function () { });
+    var detachedBackup = instanceMethodsCopy.detached || (function () { });
+    instanceMethodsCopy.attached = function () {
+        defaultOnInit.call(this);
+        if (attachedBackup) {
+            attachedBackup.call(this);
+        }
+    };
+    instanceMethodsCopy.detached = function () {
+        if (detachedBackup) {
+            detachedBackup.call(this);
+        }
+        storeBinder.dispose();
+    };
+    if (!instanceMethodsCopy.created) {
+        instanceMethodsCopy.created = defaultOnInit;
+    }
+    Component(__assign({ properties: buildProperties(mergeDefaultProps(defaultProps)), options: {
             styleIsolation: 'shared',
             multipleSlots: true,
             virtualHost: true,
-        },
-        methods: methods,
-    });
+        }, methods: methods, behaviors: mixins, data: data }, (instanceMethodsCopy || {})));
+};
+var StoreBinder = /** @class */ (function () {
+    function StoreBinder(storeOptions) {
+        this.storeOptions = storeOptions;
+        this.disposeStore = undefined;
+    }
+    /**
+     * 绑定和 store 的关系
+     */
+    StoreBinder.prototype.init = function (theThis) {
+        var _this = this;
+        var store = this.storeOptions.store();
+        var disposes = Object.keys(this.storeOptions.mapState).map(function (key) {
+            return _this.storeOptions.updateHook(function () {
+                var _a;
+                theThis.setData((_a = {},
+                    _a[key] = _this.storeOptions.mapState[key]({ store: store }),
+                    _a));
+            });
+        });
+        theThis.$store = store;
+        this.disposeStore = function () { return disposes.forEach(function (d) { return d(); }); };
+    };
+    /**
+     * 释放和 store 的关系
+     */
+    StoreBinder.prototype.dispose = function () {
+        if (this.disposeStore) {
+            this.disposeStore();
+        }
+    };
+    return StoreBinder;
+}());
+export { StoreBinder };
+function ComponentImpl(_a) {
+    var defaultProps = _a.props, data = _a.data, methods = _a.methods, mixins = _a.mixins, instanceMethods = __rest(_a, ["props", "data", "methods", "mixins"]);
+    Component(__assign({ properties: buildProperties(mergeDefaultProps(defaultProps)), options: {
+            styleIsolation: 'shared',
+            multipleSlots: true,
+            virtualHost: true,
+        }, methods: methods, behaviors: mixins, data: data }, instanceMethods));
 }
 export function triggerEvent(instance, eventName, value, e) {
     // 首字母大写，然后加上 on
@@ -70,4 +141,18 @@ export function triggerEventValues(instance, eventName, values, e) {
 export function triggerCatchEvent(instance, eventName, e) {
     instance.triggerEvent(eventName.toLocaleLowerCase());
 }
-export { ComponentImpl as Component };
+export function getValueFromProps(instance, propName) {
+    var value;
+    var properties = instance.properties;
+    if (!propName) {
+        return properties;
+    }
+    if (typeof propName === 'string') {
+        value = properties[propName];
+    }
+    if (Array.isArray(propName)) {
+        value = propName.map(function (name) { return properties[name]; });
+    }
+    return value;
+}
+export { ComponentWithSignalStoreImpl as ComponentWithSignalStore, ComponentImpl as Component, };

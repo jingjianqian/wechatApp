@@ -1,6 +1,0 @@
-{
-    "component": true,
-    "usingComponents": {
-        "custom-nav-bar":"/custom-nav-bar/navBar"
-    }
-}

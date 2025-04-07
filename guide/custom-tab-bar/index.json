@@ -1,7 +1,0 @@
-{
-  "component": true,
-  "usingComponents": {
-    "container": "antd-mini/Container/index",
-    "tab-bar": "antd-mini/TabBar/index"
-  }
-}

@@ -1,7 +1,4 @@
 export var SwitchDefaultProps = {
-    size: 'medium',
-};
-export var SwitchFunctionalProps = {
     checked: null,
     loading: false,
     color: '',
@@ -9,5 +6,6 @@ export var SwitchFunctionalProps = {
     uncheckedText: '',
     size: 'medium',
     disabled: false,
+    readonly: false,
     defaultChecked: false,
 };

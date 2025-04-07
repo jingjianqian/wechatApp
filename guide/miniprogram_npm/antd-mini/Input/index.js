@@ -1,78 +1,82 @@
-import { useEvent, useState } from 'functional-mini/component';
-import '../_util/assert-component2';
-import { mountComponent } from '../_util/component';
-import { useComponentEvent } from '../_util/hooks/useComponentEvent';
-import useLayoutEffect from '../_util/hooks/useLayoutEffect';
-import { hasValue, useMergedState } from '../_util/hooks/useMergedState';
-import { triggerRefEvent } from '../_util/hooks/useReportRef';
-import { InputFunctionalProps } from './props';
-var Input = function (props) {
-    var isControlled = hasValue(props.controlled)
-        ? !!props.controlled
-        : hasValue(props.value);
-    var option = {
-        value: props.value,
-    };
-    if (!isControlled && hasValue(props.value)) {
-        option = {
-            defaultValue: props.value,
-        };
-    }
-    // 微信的 input 不支持受控模式
-    // 通过 counter 的变化，重新渲染组件，让 value 改回去
-    var _a = useState(0), counter = _a[0], setCounter = _a[1];
-    var _b = useMergedState(props.defaultValue, option), value = _b[0], updateValue = _b[1];
-    var _c = useState(false), selfFocus = _c[0], setSelfFocus = _c[1];
-    var triggerEvent = useComponentEvent(props).triggerEvent;
-    triggerRefEvent();
-    useLayoutEffect(function (mount) {
-        if (!isControlled && !mount) {
-            updateValue(props.value);
-        }
-    }, [props.value]);
-    useEvent('onChange', function (e) {
-        var newValue = e.detail.value;
-        if (!isControlled) {
-            updateValue(newValue);
-        }
-        else {
-            setCounter(function (c) { return c + 1; });
-        }
-        triggerEvent('change', newValue, e);
-    });
-    useEvent('onFocus', function (e) {
-        var newValue = e.detail.value;
-        setSelfFocus(true);
-        triggerEvent('focus', newValue, e);
-    });
-    useEvent('onBlur', function (e) {
-        var newValue = e.detail.value;
-        setSelfFocus(false);
-        triggerEvent('blur', newValue, e);
-    });
-    useEvent('onConfirm', function (e) {
-        var newValue = e.detail.value;
-        triggerEvent('confirm', newValue, e);
-    });
-    useEvent('onClear', function (e) {
-        if (!isControlled) {
-            updateValue('');
-        }
-        triggerEvent('change', '', e);
-    });
-    useEvent('update', function (e) {
-        if (isControlled) {
-            return;
-        }
-        updateValue(e);
-    });
-    return {
-        counter: counter,
-        state: {
-            value: value,
-            controlled: isControlled,
+import { effect } from '@preact/signals-core';
+import mixinValue from '../mixins/value';
+import { ComponentWithSignalStoreImpl, getValueFromProps, triggerEvent, } from '../_util/simply';
+import i18nController from '../_util/store';
+import { InputDefaultProps } from './props';
+import { formatNumberWithLimits, isNumber } from './utils';
+ComponentWithSignalStoreImpl({
+    storeOptions: {
+        store: function () { return i18nController; },
+        updateHook: effect,
+        mapState: {
+            locale: function (_a) {
+                var store = _a.store;
+                return store.currentLocale.value;
+            },
         },
-        selfFocus: selfFocus,
-    };
-};
-mountComponent(Input, InputFunctionalProps);
+    },
+    props: InputDefaultProps,
+    data: {
+        selfFocus: false,
+    },
+    methods: {
+        onChange: function (e) {
+            var value = e.detail.value;
+            if (!this.isControlled()) {
+                this.update(value);
+            }
+            triggerEvent(this, 'change', value, e);
+        },
+        onFocus: function (e) {
+            var value = e.detail.value;
+            this.setData({
+                selfFocus: true,
+            });
+            triggerEvent(this, 'focus', value, e);
+        },
+        onBlur: function (e) {
+            var value = e.detail.value;
+            this.setData({
+                selfFocus: false,
+            });
+            var val = this.checkNumberValue(value);
+            if (val !== null) {
+                if (val !== value && !this.isControlled()) {
+                    this.update(val);
+                }
+                value = val;
+            }
+            triggerEvent(this, 'blur', value, e);
+        },
+        onConfirm: function (e) {
+            var value = e.detail.value;
+            triggerEvent(this, 'confirm', value, e);
+        },
+        onClear: function (e) {
+            if (!this.isControlled()) {
+                this.update('');
+            }
+            triggerEvent(this, 'change', '', e);
+        },
+        checkNumberValue: function (value) {
+            var _a = getValueFromProps(this, [
+                'type',
+                'max',
+                'min',
+                'precision',
+            ]), type = _a[0], max = _a[1], min = _a[2], precision = _a[3];
+            var NUMBER_KEYBOARD = ['number', 'digit', 'numberpad', 'digitpad'];
+            if (NUMBER_KEYBOARD.indexOf(type) !== -1 &&
+                isNumber(value) &&
+                isNumber(max) &&
+                isNumber(min)) {
+                return formatNumberWithLimits(value, max, min, precision);
+            }
+            return null;
+        },
+    },
+    mixins: [mixinValue({ scopeKey: 'state' })],
+    attached: function () {
+        this.triggerEvent('ref', this);
+    },
+});

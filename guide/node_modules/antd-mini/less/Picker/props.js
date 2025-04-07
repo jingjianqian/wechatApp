@@ -1,13 +1,4 @@
 export var PickerDefaultProps = {
-    okText: '确定',
-    cancelText: '取消',
-    disabled: false,
-    maskClosable: false,
-    options: [],
-    placeholder: '请选择',
-    defaultValue: [],
-};
-export var PickerFunctionalProps = {
     formattedValueText: null,
     visible: null,
     defaultVisible: null,
@@ -15,13 +6,15 @@ export var PickerFunctionalProps = {
     value: null,
     defaultValue: null,
     disabled: false,
+    readonly: false,
     title: '',
-    okText: '确定',
-    cancelText: '取消',
-    placeholder: '请选择',
+    okText: null,
+    cancelText: null,
+    placeholder: null,
     options: [],
     popClassName: '',
     popStyle: '',
     maskClosable: true,
     onFormat: null,
+    emptyText: null,
 };

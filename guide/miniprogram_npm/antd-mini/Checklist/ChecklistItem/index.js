@@ -1,7 +1,10 @@
-import { Component, triggerEvent } from '../../_util/simply';
+import { Component, getValueFromProps, triggerEvent } from '../../_util/simply';
 import { ChecklistItemDefaultProps } from './props';
-Component(ChecklistItemDefaultProps, {
-    onChecklistItemClick: function () {
-        triggerEvent(this, 'change', this.properties.item);
-    }
+Component({
+    props: ChecklistItemDefaultProps,
+    methods: {
+        onChecklistItemClick: function () {
+            triggerEvent(this, 'change', getValueFromProps(this, 'item'));
+        },
+    },
 });

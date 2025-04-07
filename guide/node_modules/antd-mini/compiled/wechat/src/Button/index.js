@@ -9,7 +9,6 @@ var __assign = (this && this.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { ButtonDefaultProps } from './props';
 Component({
     properties: {
@@ -36,6 +35,10 @@ Component({
         type: {
             type: String,
             value: 'default',
+        },
+        aide: {
+            type: Boolean,
+            value: false,
         },
     },
     options: {

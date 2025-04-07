@@ -1,11 +1,6 @@
 export var CascaderDefaultProps = {
-    placeholder: '请选择',
-    okText: '确定',
-    cancelText: '取消',
-    disabled: false,
-    maskClosable: false,
-};
-export var CascaderFunctionalProps = {
+    visible: null,
+    defaultVisible: null,
     animationType: 'transform',
     value: null,
     defaultValue: null,
@@ -13,6 +8,7 @@ export var CascaderFunctionalProps = {
     placeholder: '请选择',
     cancelText: '取消',
     disabled: false,
+    readonly: false,
     title: '',
     okText: '确定',
     maskClosable: true,

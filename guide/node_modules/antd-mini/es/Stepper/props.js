@@ -1,9 +1,4 @@
 export var StepperDefaultProps = {
-    step: 1,
-    disabled: false,
-    type: 'digit',
-};
-export var StepperFunctionalProps = {
     value: null,
     defaultValue: null,
     precision: -1,
@@ -15,4 +10,9 @@ export var StepperFunctionalProps = {
     inputStyle: '',
     disabled: false,
     inputReadOnly: false,
+    onChange: null,
+    onConfirm: null,
+    onFocus: null,
+    onBlur: null,
+    onDisabledTap: null,
 };
