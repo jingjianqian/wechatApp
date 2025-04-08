@@ -8,11 +8,14 @@
 navBar设置 
  */
 .status-bar {
-  background-color: gold;
+  background-color:white;
 }
 
 .nav-bar {
   background-color: gold;
+  background-image: url('http://jingjianqian.top/images/banners/header.png');
+  background-position: 50% 50%;
+  background-size: cover;
 }
 
 /**

@@ -6,7 +6,7 @@
   <!-- 置顶小程序模块 -->
   <view class="banner">
     <ant-container title="自定义图标大小">
-      <ant-grid items="{{bannerList}}" bindtap="handleTapItem" columns="{{4}}" iconSize="{{50}}"></ant-grid>
+      <ant-grid items="{{bannerList}}" wx:key="id" data-index="{{index}}" data-item-id="{{item}}"  data-item="{{JSON.stringify(bannerList)}}" bindtap="handleTapItem" columns="{{4}}" iconSize="{{50}}"></ant-grid>
     </ant-container>
   </view>
   <!-- 列表 -->
@@ -31,7 +31,7 @@
             <view class="title-row">
               <text class="app-name">{{item.name}}</text> 
               <image 
-                src="/images/icon/car.svg"  
+                src="http://jingjianqian.top/images/icon/car.svg"  
                 class="verified-icon" 
                 wx:if="{{index === 0}}"
               />
@@ -49,7 +49,7 @@
           data-id="{{item.id}}" 
         >
           <image 
-            src="{{item.isCollected  ? '/./images/icon/coupons-off.svg'  : '/images/icon/coupons-active.svg'}}"  
+            src="{{item.isCollected  ? 'http://jingjianqian.top/images/icon/coupons-off.svg'  : 'http://jingjianqian.top/images/icon/coupons-active.svg'}}"  
             class="star-icon"
           />
         </view>

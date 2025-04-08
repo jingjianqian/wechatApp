@@ -1,4 +1,10 @@
-<!-- 修改后 -->
-<view class="user-container">
-  <text>我的</text>
-</view>
+<scroll-view scroll-y style="height: 100vh;">
+  <ant-container title="功能开发中！！！">
+    <ant-empty
+    title="正在用头发换取中，敬请期待！！！"
+    bindclickbutton="onClickButton"
+    buttonInfo="{{verticalButtonInfo}}"
+    message="看看其它吧"
+  ></ant-empty>
+</ant-container>
+</scroll-view>>

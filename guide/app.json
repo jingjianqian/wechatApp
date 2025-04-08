@@ -85,6 +85,9 @@
   "permission": {
     "scope.userLocation": {
       "desc": "获取离你最近的门店"
+    },
+    "scope.navigateToMiniProgram":  {
+      "desc": "用于跳转关联服务小程序"
     }
   },
   "usingComponents": {
