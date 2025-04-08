@@ -41,68 +41,51 @@
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
   "condition": {
-    "plugin": {
-      "list": []
-    },
-    "game": {
-      "list": []
-    },
-    "gamePlugin": {
-      "list": []
-    },
     "miniprogram": {
       "list": [
         {
-          "id": -1,
           "name": "home",
           "pathName": "pages/index/index",
           "query": "",
           "scene": null
         },
         {
-          "id": -1,
           "name": "商品详情页面",
           "pathName": "pages/goods-details/index",
           "query": "id=134&inviter_id=456",
           "scene": 1011
         },
         {
-          "id": -1,
           "name": "商品详情页面",
           "pathName": "pages/goods-details/index",
           "query": "id= 6761",
           "scene": null
         },
         {
-          "id": -1,
           "name": "砍价详情页面",
           "pathName": "pages/goods-details/index",
           "query": "id=6765",
           "scene": null
         },
         {
-          "id": -1,
           "name": "砍价详情页面",
           "pathName": "pages/goods-details/index",
           "query": "id=6765&kjJoinUid=701677",
           "scene": null
         },
         {
-          "id": -1,
           "name": "拼团",
           "pathName": "pages/goods-details/index",
           "query": "id=6761",
           "scene": null
         },
         {
-          "id": -1,
           "name": "生成海报",
           "pathName": "pages/goods-details/poster",
           "query": "goodsid=6761",
           "scene": null
         },
         {
-          "id": -1,
           "name": "notice",
           "pathName": "pages/notice/index",
           "query": "",
@@ -125,5 +108,7 @@
     "ignore": [],
     "include": []
   },
-  "appid": "wx5fd8eebdcce9e914"
+  "appid": "wx5fd8eebdcce9e914",
+  "projectname": "mytools",
+  "libVersion": "3.6.6"
 }

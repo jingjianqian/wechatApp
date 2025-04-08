@@ -1,0 +1,43 @@
+       "pages/collect/collect",
+        "pages/my/my",
+        "pages/test/test"
+
+    
+"tabBar": {
+        "custom": false,
+        "color": "#7A7E83",
+        "selectedColor": "#3cc51f",
+        "borderStyle": "black",
+        "backgroundColor": "#ffffff",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "iconPath": "asset/images/tabBar/index.png",
+                "selectedIconPath": "asset/images/tabBar/index_cover.png",
+                "text": "精选11"
+            },
+            {
+                "pagePath": "pages/collect/collect",
+                "iconPath": "asset/images/tabBar/collect.png",
+                "selectedIconPath": "asset/images/tabBar/collect_cover.png",
+                "text": "收藏"
+            },
+            {
+                "pagePath": "pages/test/test",
+                "iconPath": "asset/images/tabBar/my.png",
+                "selectedIconPath": "asset/images/tabBar/my_cover.png",
+                "text": "我的"
+            }
+        ]
+    },
+
+,
+    "componentFramework": "glass-easel",
+    "lazyCodeLoading": "requiredComponents",
+    "renderer": "skyline",
+    "rendererOptions": {
+        "skyline": {
+          "disableABTest": false,
+          "defaultDisplayBlock": false
+        }
+    }
