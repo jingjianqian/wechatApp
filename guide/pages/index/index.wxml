@@ -4,11 +4,16 @@
   <view class="nav-bar" style="height: {{navBarHeight}}px;">
   </view>
   <!-- 置顶小程序模块 -->
-  <view class="banner">
-    <ant-container title="自定义图标大小">
-      <ant-grid items="{{bannerList}}" wx:key="id" data-index="{{index}}" data-item-id="{{item}}"  data-item="{{JSON.stringify(bannerList)}}" bindtap="handleTapItem" columns="{{4}}" iconSize="{{50}}"></ant-grid>
-    </ant-container>
+  <view class="custom-container">
+  <view class="grid-container">
+    <block wx:for="{{bannerList}}" wx:key="*this">
+      <view class="grid-item" bindtap="handleTapItem" data-item="{{item}}">
+        <image src="{{item.icon}}"  mode="aspectFit" style="width: 50px; height: 50px;"></image>
+        <text class="grid-text">{{item.name}}</text> 
+      </view>
+    </block>
   </view>
+</view>
   <!-- 列表 -->
   <view wx:for="{{appList}}" wx:key="id" class="item-container">
     
@@ -23,6 +28,8 @@
         data-index="{{index}}"
         bindchange="handleSwipe"
         bindtouchend="handleSwipeEnd"
+        bindtap="handleTapItem"  
+        data-item="{{item}}"
       >
         <!-- 内容主体 -->
         <view class="content-wrapper">

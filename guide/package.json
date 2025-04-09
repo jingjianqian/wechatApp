@@ -1,6 +1,6 @@
 {
-  "name": "wechat-app-mall",
-  "version": "8.4.0",
+  "name": "wechat-tools",
+  "version": "0.0.1",
   "description": "删除 <float-menu />",
   "main": "app.js",
   "dependencies": {
@@ -20,9 +20,9 @@
     "url": "git+https://github.com/EastWorld/wechat-app-mall.git"
   },
   "keywords": [
-    "微店",
-    "小店",
-    "微商城"
+    "小程序",
+    "收藏",
+    "小程序工具"
   ],
   "author": "gooking",
   "license": "ISC",

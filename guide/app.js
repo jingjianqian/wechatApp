@@ -23,43 +23,44 @@ App({
 const bannerData = {
   bannerList: [
     {
-      title: '腾讯体育',
-      id:'wxf1b97b2df301a1c8',
+      name: '腾讯体育',
+      appid:'wxf1b97b2df301a1c8',
       icon: 'http://jingjianqian.top/images/banners/01.svg',
+      desc:''
     },
     {
-      title: 'BOSS直聘',
-      id:'wxf1b97b2df301a1c8',
+      name: 'BOSS直聘',
+      appid:'wxf1b97b2df301a1c8',
       icon: 'http://jingjianqian.top/images/banners/BOSS.svg',
     },
     {
-      title: '懂车帝',
-      id:'wxf1b97b2df301a1c8',
+      name: '懂车帝',
+      appid:'wxf1b97b2df301a1c8',
       icon: 'http://jingjianqian.top/images/banners/dcd.svg',
     },
     {
-      title: '京东购物',
-      id:'wxf1b97b2df301a1c8',
+      name: '京东购物',
+      appid:'wxf1b97b2df301a1c8',
       icon: 'http://jingjianqian.top/images/banners/jdgw.svg',
     },
     {
-      title: '拼多多',
-      id:'wxf1b97b2df301a1c8',
+      name: '拼多多',
+      appid:'wxf1b97b2df301a1c8',
       icon: 'http://jingjianqian.top/images/banners/pdd.svg',
     },
     {
-      title: '微博热搜',
-      id:'wxf1b97b2df301a1c8',
+      name: '微博热搜',
+      appid:'wxf1b97b2df301a1c8',
       icon: 'http://jingjianqian.top/images/banners/xinlang.svg',
     },
     {
-      title: '顺丰速运',
-      id:'wxf1b97b2df301a1c8',
+      name: '顺丰速运',
+      appid:'wxf1b97b2df301a1c8',
       icon: 'http://jingjianqian.top/images/banners/sfsy.svg',
     },
     {
-      id: '知乎',
-      id:'wxf1b97b2df301a1c8',
+      name: '知乎+',
+      appid:'wxf1b97b2df301a1c8',
       icon: 'http://jingjianqian.top/images/banners/zhihu.svg',
     }
   ],
