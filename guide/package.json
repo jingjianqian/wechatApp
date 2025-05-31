@@ -1,7 +1,7 @@
 {
   "name": "wechat-tools",
   "version": "0.0.1",
-  "description": "删除 <float-menu />",
+  "description": "ai写的",
   "main": "app.js",
   "dependencies": {
     "@vant/weapp": "^1.11.6",
@@ -9,7 +9,6 @@
     "apifm-wxapi": "^24.06.19",
     "dayjs": "^1.11.6",
     "mp-html": "^2.3.1",
-    "wxa-plugin-canvas": "^1.1.12",
     "wxbarcode": "^1.0.2"
   },
   "scripts": {

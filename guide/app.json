@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/category/category",
-    "pages/my/index"
+    "pages/my/index",
+    "pages/login/index"
   ],
   "requiredPrivateInfos": [
     "getLocation",
@@ -79,6 +80,13 @@
         "iconPath": "images/nav/my-off.png",
         "selectedIconPath": "images/nav/my-on.png",
         "text": "我的"
+      },
+      
+      {
+        "pagePath": "pages/login/index",
+        "iconPath": "images/nav/my-off.png",
+        "selectedIconPath": "images/nav/my-on.png",
+        "text": "登陆"
       }
     ]
   },

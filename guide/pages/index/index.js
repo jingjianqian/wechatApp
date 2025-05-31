@@ -100,12 +100,12 @@ Page({
       success(res) {
         //TODO 
         console.log("打开成功");
-        console.log(res)
+        console.log(res.errMsg)
       },
       fail(res){
          //TODO 
         console.log("打开失败")
-        console.log(res)
+        console.log(res.errMsg)
       }
     })
 },
